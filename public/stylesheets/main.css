@@ -1,9 +1,14 @@
+body {
+    color: grey;
+}
+
 .wireframe {
-    outline: 2px solid gray;
+    outline: 2px solid lightgray;
 }
 
 #logo {
-    width: 4em;
+    width: 3em;
+    margin: 0em 1em 0em 1em;
 }
 
 form {
@@ -11,7 +16,7 @@ form {
     flex-direction: column;
     width: 20em;
     padding: 1em;
-    margin: 2em;
+    margin: 1em;
 }
 
 #rooster-avatar {
@@ -25,4 +30,45 @@ form {
 .card {
     width: 16em;
     margin: 2em;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#user {
+    margin:1em;
+
+}
+
+#cluck-button, #sign-in, #sign-out {
+    width: 6em;
+}
+
+li {
+    list-style-type:none;
+}
+
+.sign-in-page {
+    width: 30em;
+    height: 20em;
+    margin: 2em;
+    display: flex
+}
+
+.sign-in-page > form {
+    display: flex;
+}
+.sign-in-page > form > * {
+    margin: 0.3em;
 }
