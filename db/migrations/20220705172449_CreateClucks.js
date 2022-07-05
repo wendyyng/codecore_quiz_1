@@ -8,7 +8,8 @@ exports.up = function(knex) {
         table.string('username');
         table.string('image_url');
         table.string('content',1000);
-        table.timestamps(true,true);
+        table.timestamp('createdAt').defaultTo(knex.fn.now());
+        table.timestamp('updatedAt').defaultTo(knex.fn.now());
     })
 
 };
