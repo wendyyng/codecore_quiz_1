@@ -1,0 +1,7 @@
+.wireframe {
+    outline: 2px solid gray;
+}
+
+#logo {
+    width: 4em;
+}

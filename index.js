@@ -51,7 +51,7 @@ app.post('/sign_out', (req, res) =>{
 })
 
 
-const PORT = 4545
+const PORT = 4000
 const HOST = 'localhost'
 app.listen(PORT, HOST, () => {
   console.log(`The server is listening at ${HOST}:${PORT}`);

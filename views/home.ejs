@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+<h1>Welcome</h1>
+<div class="wireframe">
+    <ul class="navbar-nav">
+        <% if (username) { %>
+          <li class="nav-item">
+            <span id="hello-user">Hello, <%- username %>!</span>
+          </li>
+      <% } else { %>
+          <li class="nav-item">
+              <form action="/sign_in" method="POST" class='form-inline'>
+                <label for="username">Username</label>
+                  <input class='form-control' name='username' placeholder='e.g. Madam Welminster' type="text">
+                  <button type="submit" class='btn btn-outline-primary' id="sign-in">Sign In</button>
+              </form>
+          </li>
+      <% } %>
+      </ul>
+</div>
+<%- include('./partials/footer') %>
