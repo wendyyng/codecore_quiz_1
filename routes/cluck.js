@@ -18,6 +18,14 @@ router.get('/', (req, res) => {
     })
   })
 
+  router.get('/clucks', (req, res) => {
+    knex('clucks')
+  //   .where('username', res.locals.username)
+    .orderBy("createdAt", 'desc')
+    .then(clucks => {
+      res.render("index", {clucks: clucks})
+    })
+  })
 //Render new cluck form
 router.get('/form', (req, res) => {
     let username = req.cookies.username;

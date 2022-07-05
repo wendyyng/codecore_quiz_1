@@ -24,14 +24,14 @@
               <li class="nav-item">
                   
                   <form action="/sign_out" method="POST">  
-                    <span id="hello-user">Hello, <%- username %>!</span>
+                    <span id="hello-user"><%- username %></span>
                       <button type="submit" class='btn btn-outline-primary'>Sign Out</button>
                   </form>
               </li>
           <% } else { %>
               <li class="nav-item">
                   <form action="/sign_in" method="POST" class='form-inline'>
-                      <a href="home" class='btn btn-outline-primary' id="sign-in">Sign In</a>
+                      <a href="sign_in" class='btn btn-outline-primary' id="sign-in">Sign In</a>
                   </form>
               </li>
           <% } %>

@@ -32,9 +32,9 @@ app.use((req,res, next) => {
   next();
 })
 
-// app.get('/', (req, res) => {
-//   res.render('home')
-// })
+app.get('/sign_in', (req, res) => {
+  res.render('sign_in')
+})
 
 
 app.post('/sign_in', (req, res) =>{
@@ -46,10 +46,10 @@ app.post('/sign_in', (req, res) =>{
 
 app.post('/sign_out', (req, res) =>{
   res.clearCookie('username')
-  res.redirect('/')
+  res.redirect('sign_in')
 })
 
-//Router
+//Cluck Router
 const cluckRouter = require("./routes/cluck") 
 app.use('/', cluckRouter);
 

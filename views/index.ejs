@@ -1,10 +1,10 @@
 <%- include('./partials/header') %>
 
 <h1>Clucks</h1>
-<div class="cards ">
+<div class="cards">
   <% for(let cluck of clucks) { %>
     <div class="wireframe card">
-      <img class="img-thumbnail" src="images/rooster.svg"
+      <img id="rooster-avatar" class="img-thumbnail" src="images/rooster.svg"
       data-holder-rendered="true">
       <!-- <h5>
         <a href="/todos/<%-cluck.id%>"><%-cluck.title%></a>
