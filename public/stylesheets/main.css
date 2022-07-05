@@ -82,3 +82,19 @@ li {
     display: flex;
     flex-direction: row;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container > div {
+    width: 50%
+}
+
+#trending {
+    width: 20em;
+    height: 30em;
+    display: flex;
+    flex-direction:column;
+}

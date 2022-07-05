@@ -32,8 +32,10 @@ app.use((req,res, next) => {
   next();
 })
 
+//Sign in page
 app.get('/sign_in', (req, res) => {
-  res.render('sign_in')
+  let username = req.cookies.username;
+  res.render('sign_in', {username: username}) 
 })
 
 
@@ -53,7 +55,7 @@ app.post('/sign_out', (req, res) =>{
 const cluckRouter = require("./routes/cluck") 
 app.use('/', cluckRouter);
 
-const PORT = 4000
+const PORT = 5500
 const HOST = 'localhost'
 app.listen(PORT, HOST, () => {
   console.log(`The server is listening at ${HOST}:${PORT}`);

@@ -1,5 +1,21 @@
 <%- include('./partials/header') %>
+<div class="container">
+ 
+<div class="left trending">
+  <div class="wireframe card" id="trending">
+    <h1>Trending Clucks</h1>
+    <% if(trends){%>  
+      <ul>
+        
+      </ul>
+      <% }else{  %> 
+        <h2>Nothing is trending...</h2> 
+        <% } %>
+    </div>
 
+</div>
+
+<div class="right clarks">
 <div class="cards">
   <% let currentTime = new Date()%>
   <% for(let cluck of clucks) { %>
@@ -20,5 +36,6 @@
     </div>
  <% } %>
 </div>
-
+</div>
+</div>
 <%- include('./partials/footer') %>

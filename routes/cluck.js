@@ -2,15 +2,14 @@ const express = require('express');
 const knex = require('../db/client');
 const router = express.Router()
 const {relativeDate} = require('../public/js/date')
+// const {trending} = require('../public/js/trending')
 
-//Sign in page
-router.get('/home', (req, res) => {
-    let username = req.cookies.username;
-    res.render('home', {username: username}) 
-  })
+
 
 //Index page
-router.get('/', (req, res) => {
+let indexPage = ['/', '/clucks']
+router.get(indexPage, (req, res) => {
+  let trends = false
     knex('clucks')
     .orderBy("createdAt", 'desc')
     .then(clucks => {
@@ -18,17 +17,17 @@ router.get('/', (req, res) => {
         for(let each of clucks){
             time.push(relativeDate(each.createdAt))
         }
-      res.render("index", {clucks: clucks, relativeTime: time, relativeDate:relativeDate})
+      res.render("index", {clucks: clucks, relativeTime: time, relativeDate:relativeDate, trends: trends})
     })
   })
 
-  router.get('/clucks', (req, res) => {
-    knex('clucks')
-    .orderBy("createdAt", 'desc')
-    .then(clucks => {
-      res.render("index", {clucks: clucks})
-    })
-  })
+  // router.get('/clucks', (req, res) => {
+  //   knex('clucks')
+  //   .orderBy("createdAt", 'desc')
+  //   .then(clucks => {
+  //     res.render("index", {clucks: clucks})
+  //   })
+  // })
 //Render new cluck form
 router.get('/form', (req, res) => {
     let username = req.cookies.username;
