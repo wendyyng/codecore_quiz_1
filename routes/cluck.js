@@ -12,7 +12,7 @@ router.get('/home', (req, res) => {
 router.get('/', (req, res) => {
     knex('clucks')
   //   .where('username', res.locals.username)
-    .orderBy("updatedAt", 'desc')
+    .orderBy("createdAt", 'desc')
     .then(clucks => {
       res.render("index", {clucks: clucks})
     })
