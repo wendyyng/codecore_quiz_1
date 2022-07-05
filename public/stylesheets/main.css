@@ -72,3 +72,8 @@ li {
 .sign-in-page > form > * {
     margin: 0.3em;
 }
+
+.cluck-page {
+    width: 25em;
+    margin: 1em;
+}
