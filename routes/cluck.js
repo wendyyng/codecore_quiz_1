@@ -1,6 +1,7 @@
 const express = require('express');
 const knex = require('../db/client');
 const router = express.Router()
+const {relativeDate} = require('../public/js/date')
 
 //Sign in page
 router.get('/home', (req, res) => {
@@ -11,16 +12,18 @@ router.get('/home', (req, res) => {
 //Index page
 router.get('/', (req, res) => {
     knex('clucks')
-  //   .where('username', res.locals.username)
     .orderBy("createdAt", 'desc')
     .then(clucks => {
-      res.render("index", {clucks: clucks})
+        let time = []
+        for(let each of clucks){
+            time.push(relativeDate(each.createdAt))
+        }
+      res.render("index", {clucks: clucks, relativeTime: time, relativeDate:relativeDate})
     })
   })
 
   router.get('/clucks', (req, res) => {
     knex('clucks')
-  //   .where('username', res.locals.username)
     .orderBy("createdAt", 'desc')
     .then(clucks => {
       res.render("index", {clucks: clucks})
