@@ -77,3 +77,8 @@ li {
     width: 25em;
     margin: 1em;
 }
+
+.card {
+    display: flex;
+    flex-direction: row;
+}
