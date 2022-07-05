@@ -13,3 +13,16 @@ form {
     padding: 1em;
     margin: 2em;
 }
+
+.img-thumbnail {
+    width: 4em;
+}
+
+.cluck-image {
+    width: 10em;
+}
+
+.card {
+    width: 16em;
+    margin: 2em;
+}
