@@ -1,13 +1,21 @@
 <%- include('./partials/header') %>
-
+<%if(username){ %>
 <h1>New Cluck</h1>
-<form action="/clucks" method="POST" class="wireframe">
-  <!-- <input type="text" name="title" placeholder="Whatchoo cluckin' 'bout?"> -->
-  <label for="content">Content</label>
-  <textarea name="content" id="" cols="30" rows="10" placeholder="Whatchoo cluckin' 'bout?"></textarea>
-  <label for="image_url">Image Url</label>
-  <input type="url" name="image_url" placeholder="https://i.imgur.com/qM6KaEy.gifv">
-  <input type="submit" value="Cluck!">
+<form action="/form" method="post" class="wireframe">
+  <div class="border">
+      <div class="form-group">
+          <label for="content">Content</label>
+          <textarea class="form-control" id="content" name="content" rows="3" placeholder="Watchoo cluckin' 'bout?" required></textarea>
+        </div>
+      <div class="form-group">
+          <label for="image_url">Image Url</label>
+          <input type="url" class="form-control" name="image_url" id="image_url" placeholder="https://i.imgur.com/qM6KaEy.gifv">
+      </div>
+    <button type="submit" class="btn btn-secondary float-right">Cluck!</button>
+  <br/>
+  </div>
 </form>
-
+<%}else{%>
+  <h1>You need to sign in first to create clucks</h1>
+<%}%>
 <%- include('./partials/footer') %>
