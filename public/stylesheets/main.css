@@ -5,3 +5,11 @@
 #logo {
     width: 4em;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    padding: 1em;
+    margin: 2em;
+}

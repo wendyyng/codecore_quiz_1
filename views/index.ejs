@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+
+<h1>Clucks</h1>
+<div class="cards">
+  <% for(let cluck of clucks) { %>
+    <div>
+      <!-- <h5>
+        <a href="/todos/<%-cluck.id%>"><%-cluck.title%></a>
+      </h5> -->
+      <img src="<%- cluck.imageUrl %>" alt="todo img">
+      <p><%- cluck.content %></p>
+      <p><%- cluck.username %></p>
+      
+    </div>
+ <% } %>
+</div>
+
+<%- include('./partials/footer') %>

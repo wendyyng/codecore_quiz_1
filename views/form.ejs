@@ -1,0 +1,13 @@
+<%- include('./partials/header') %>
+
+<h1>New Cluck</h1>
+<form action="/clucks" method="POST" class="wireframe">
+  <!-- <input type="text" name="title" placeholder="Whatchoo cluckin' 'bout?"> -->
+  <label for="content">Content</label>
+  <textarea name="content" id="" cols="30" rows="10" placeholder="Whatchoo cluckin' 'bout?"></textarea>
+  <label for="image_url">Image Url</label>
+  <input type="url" name="image_url" placeholder="https://i.imgur.com/qM6KaEy.gifv">
+  <input type="submit" value="Cluck!">
+</form>
+
+<%- include('./partials/footer') %>
