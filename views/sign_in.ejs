@@ -1,0 +1,12 @@
+<%- include('./partials/header') %>
+<div class="wireframe sign-in-page">
+    <form action="/sign_in" method="POST" class='form-inline'>
+        <label for="username">Username</label>
+        <input class='form-control' name='username' placeholder='e.g. Madam Welminster' type="text" required>
+        <div class="float-right">
+          <button type="submit" class="btn btn-outline-secondary float-right" id="sign-in">Sign In</button>
+        </div>
+      </form>
+</div>
+
+<%- include('./partials/footer') %>

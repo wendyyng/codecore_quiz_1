@@ -1,0 +1,117 @@
+body {
+    color: grey;
+}
+
+.wireframe {
+    outline: 2px solid lightgray;
+}
+
+#logo {
+    width: 3em;
+    margin: 0em 1em 0em 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    padding: 1em;
+    margin: 1em;
+}
+
+#rooster-avatar {
+    width: 50px;
+    margin: 0.1em;
+}
+
+.cluck-image {
+    width: 10em;
+}
+
+.card {
+    width: 16em;
+    margin: 2em;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#user {
+    margin:1em;
+
+}
+
+#cluck-button, #sign-in, #sign-out {
+    width: 6em;
+}
+
+li {
+    list-style-type:none;
+}
+
+.sign-in-page {
+    width: 20em;
+    height: 15em;
+    margin: 2em;
+    display: flex
+}
+
+.sign-in-page > form {
+    display: flex;
+}
+.sign-in-page > form > * {
+    margin: 0.3em;
+}
+
+.cluck-page {
+    width: 25em;
+    margin: 1em;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 30%
+}
+
+.right {
+    width: 70%;
+}
+#trending {
+    width: 20em;
+    min-height: 30em;
+    display: flex;
+    flex-direction:column;
+}
+
+#trending-title {
+    margin: 0.5em;
+    font-size: 1.5em;
+}
+
+.float-right{
+    float: right;
+}
+
+hr {
+    margin: 0;
+}
