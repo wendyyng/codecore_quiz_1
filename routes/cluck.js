@@ -36,12 +36,24 @@ const relativeDate = (currentTime, createdDate) => {
 
   if(days === 0 && hours === 0 && mins === 0 && secs >= 0){
       return "Just Now"
-  }else if(days === 00 && hours === 0 && mins > 0){
+  }else if(days === 0 && hours === 0 && mins >= 1){
+    if(mins === 1){
+      return `${mins} minute ago` 
+    }else{
       return `${mins} minutes ago`
-  }else if(days === 00 && hours > 0){
+    }
+  }else if(days === 0 && hours > 0){
+    if(hours === 1){
+      return `${hours} hour ago` 
+    }else{
       return `${hours} hours ago`
+    }
   }else{
+    if(days === 1){
+      return `${days} day ago` 
+    }else{
       return `${days} days ago`
+    }
   }
 }
 
