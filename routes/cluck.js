@@ -4,7 +4,7 @@ const router = express.Router()
 
 const trending = (content) => {
   let trends = []
-  let regex = /#[a-zA-Z0-9_]+/
+  let regex = /^#[a-zA-Z0-9_]+/
   if(content.includes("#")){
       let words = content.split(" ")
       for(let each of words){
