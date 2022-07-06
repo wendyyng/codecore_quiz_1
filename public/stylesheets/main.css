@@ -89,10 +89,6 @@ li {
     flex-direction: row;
 }
 
-/* .container > div {
-    width: 50%
-} */
-
 .left {
     width: 30%
 }
@@ -108,9 +104,14 @@ li {
 }
 
 #trending-title {
-    margin: 0.2em;
+    margin: 0.5em;
+    font-size: 1.5em;
 }
 
 .float-right{
     float: right;
+}
+
+hr {
+    margin: 0;
 }

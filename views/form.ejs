@@ -1,6 +1,7 @@
 <%- include('./partials/header') %>
-<div class="border border-secondary border wireframe cluck-page">
+
 <%if(username){ %>
+  <div class="wireframe cluck-page">
 <form action="/form" method="post">
   <div>
       <div class="form-group">
@@ -18,8 +19,8 @@
     <br/>
   </div>
 </form>
-<%}else{%>
-  <h1>You need to sign in first to create clucks</h1>
-<%}%>
 </div>
+<%}else{%>
+  <h1>Please sign in first to create clucks</h1>
+<%}%>
 <%- include('./partials/footer') %>
