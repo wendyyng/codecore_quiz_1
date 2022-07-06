@@ -1,8 +1,49 @@
 const express = require('express');
 const knex = require('../db/client');
 const router = express.Router()
-const {relativeDate} = require('../public/js/date')
-const {trending} = require('../public/js/trending')
+
+const trending = (content) => {
+  let trends = []
+  let regex = /#[a-zA-Z0-9_]+/
+  if(content.includes("#")){
+      let words = content.split(" ")
+      for(let each of words){
+          if(regex.test(each)) trends.push(each)
+      }
+  }
+  return trends
+}
+
+// Example date: 2022-07-05 19:10:31.80691+00
+// let current = new Date()
+const relativeDate = (currentTime, createdDate) => {
+
+  let timediff = currentTime.getTime() - Date.parse(createdDate)
+  let days = Math.floor(timediff / (1000 * 60 * 60 * 24));
+  timediff -= days * (1000 * 60 * 60 * 24);
+  // console.log(timediff)
+
+  let hours = Math.floor(timediff / (1000 * 60 * 60));
+  timediff -= hours * (1000 * 60 * 60);
+
+  let mins = Math.floor(timediff / (1000 * 60));
+  timediff -= mins * (1000 * 60);
+ 
+  let secs = Math.floor(timediff / (1000));
+  timediff -= secs * 1000;
+
+  // console.log(timediff)
+
+  if(days === 0 && hours === 0 && mins === 0 && secs >= 0){
+      return "Just Now"
+  }else if(days === 00 && hours === 0 && mins > 0){
+      return `${mins} minutes ago`
+  }else if(days === 00 && hours > 0){
+      return `${hours} hours ago`
+  }else{
+      return `${days} days ago`
+  }
+}
 
 //Index page
 let indexPage = ['/', '/clucks']
@@ -39,12 +80,15 @@ router.get('/form', (req, res) => {
   //Create new cluck
 router.post('/form', (req, res) => {
     let username = req.cookies.username;
+    console.log(req.body.content)
+    console.log(typeof req.body.content)
     let trends = trending(req.body.content)
     for(let each of trends){
       knex('trending')
       .select('*')
       .where('trend', 'like', each)
       .then((tag) => {
+        // console.log(tag)
         if(tag.length === 0){
           knex('trending')
           .insert({
@@ -56,8 +100,9 @@ router.post('/form', (req, res) => {
             console.log("New trend added") 
           })
         }else{
+          console.log(tag[0].counter)
           let count = parseInt(tag[0].counter) + 1
-          console.log(typeof count)
+          // console.log(typeof count)
           knex('trending')
           .where('trend', 'ilike', each)
           .update({

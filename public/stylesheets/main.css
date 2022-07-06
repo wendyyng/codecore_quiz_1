@@ -20,7 +20,8 @@ form {
 }
 
 #rooster-avatar {
-    width: 4em;
+    width: 50px;
+    margin: 0.1em;
 }
 
 .cluck-image {
@@ -60,8 +61,8 @@ li {
 }
 
 .sign-in-page {
-    width: 30em;
-    height: 20em;
+    width: 20em;
+    height: 15em;
     margin: 2em;
     display: flex
 }
@@ -101,7 +102,15 @@ li {
 }
 #trending {
     width: 20em;
-    height: 30em;
+    min-height: 30em;
     display: flex;
     flex-direction:column;
+}
+
+#trending-title {
+    margin: 0.2em;
+}
+
+.float-right{
+    float: right;
 }

@@ -3,7 +3,7 @@
  
 <div class="left trending">
   <div class="wireframe card" id="trending">
-    <h1>Trending Clucks</h1>
+    <h1 id="trending-title">Trending Clucks</h1>
     <% if(trends){%>  
       <ul>
         <%for(let each of trends){%>  
@@ -17,19 +17,17 @@
 
 </div>
 
-<div class="right clarks">
+<div class="right clucks">
 <div class="cards">
   <% let currentTime = new Date()%>
   <% for(let cluck of clucks) { %>
     <div class="wireframe card">
       <div>
-      <img id="rooster-avatar" class="img-thumbnail" src="images/rooster.svg"
+      <img class="rounded" id="rooster-avatar" src="images/rooster.jpg"
       data-holder-rendered="true">
       </div>
       <div>
-        <p><%- cluck.username %></p>
-
-        <p><%- relativeDate(currentTime, cluck.createdAt) %></p>
+        <p><%- cluck.username %> · <%- relativeDate(currentTime, cluck.createdAt) %></p>
         <p><%- cluck.content %></p>
       <% if(cluck.image_url){%>
         <img class="cluck-image" src="<%- cluck.image_url %>" alt="todo img">
