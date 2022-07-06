@@ -76,13 +76,6 @@ router.get(indexPage, (req, res) => {
     })
   })
 
-  // router.get('/clucks', (req, res) => {
-  //   knex('clucks')
-  //   .orderBy("createdAt", 'desc')
-  //   .then(clucks => {
-  //     res.render("index", {clucks: clucks})
-  //   })
-  // })
 //Render new cluck form
 router.get('/form', (req, res) => {
     let username = req.cookies.username;
@@ -100,7 +93,6 @@ router.post('/form', (req, res) => {
       .select('*')
       .where('trend', 'like', each)
       .then((tag) => {
-        // console.log(tag)
         if(tag.length === 0){
           knex('trending')
           .insert({
@@ -114,7 +106,6 @@ router.post('/form', (req, res) => {
         }else{
           console.log(tag[0].counter)
           let count = parseInt(tag[0].counter) + 1
-          // console.log(typeof count)
           knex('trending')
           .where('trend', 'ilike', each)
           .update({
@@ -136,7 +127,7 @@ router.post('/form', (req, res) => {
         content:req.body.content
     })
     .returning('*')
-    .then((clucks) => {
+    .then(() => {
         res.redirect('/')
     })
 })
