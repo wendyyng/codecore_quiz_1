@@ -88,10 +88,17 @@ li {
     flex-direction: row;
 }
 
-.container > div {
+/* .container > div {
     width: 50%
+} */
+
+.left {
+    width: 30%
 }
 
+.right {
+    width: 70%;
+}
 #trending {
     width: 20em;
     height: 30em;

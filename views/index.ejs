@@ -6,7 +6,9 @@
     <h1>Trending Clucks</h1>
     <% if(trends){%>  
       <ul>
-        
+        <%for(let each of trends){%>  
+          <li><%- each.trend %> · <%- each.counter %></li> 
+          <% } %>  
       </ul>
       <% }else{  %> 
         <h2>Nothing is trending...</h2> 

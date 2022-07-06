@@ -55,7 +55,7 @@ app.post('/sign_out', (req, res) =>{
 const cluckRouter = require("./routes/cluck") 
 app.use('/', cluckRouter);
 
-const PORT = 5500
+const PORT = 2000
 const HOST = 'localhost'
 app.listen(PORT, HOST, () => {
   console.log(`The server is listening at ${HOST}:${PORT}`);

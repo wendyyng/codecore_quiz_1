@@ -6,7 +6,7 @@ const trending = (content) => {
     if(content.includes("#")){
         let words = content.split(" ")
         for(let each of words){
-            if(regex.test(each)) trends.push(each.slice(1))
+            if(regex.test(each)) trends.push(each)
         }
     }
     return trends
